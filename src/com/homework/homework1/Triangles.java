@@ -8,7 +8,7 @@
 //      Учитывать, что площадь может быть вещественным числом.
 
 
-package com.homeworks.homework1;
+package com.homework.homework1;
 
 public class Triangles {
 

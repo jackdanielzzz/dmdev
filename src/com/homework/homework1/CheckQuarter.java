@@ -3,9 +3,10 @@
 //Протестировать функцию в main.
 
 
-package com.homeworks.homework1;
+package com.homework.homework1;
 
 public class CheckQuarter {
+
     public static void main(String[] args) {
         int minutes = 59;
         checkQuarterTime(minutes);
@@ -16,16 +17,16 @@ public class CheckQuarter {
         if (min < 0 || min >= 60) {
             System.out.println("Неверно заданы минуты!");
         }
-        if (min >= 0 && min <= 14) {
+        else if (min >= 0 && min <= 14) {
             System.out.println("Первая четверть");
         }
-        if (min >= 15 && min <= 30) {
+        else if (min >= 15 && min <= 30) {
             System.out.println("Вторая четверть");
         }
-        if (min >= 31 && min <= 45) {
+        else if (min >= 31 && min <= 45) {
             System.out.println("Третья четверть");
         }
-        if (min >= 46 && min <= 59) {
+        else if (min >= 46 && min <= 59) {
             System.out.println("Четвертая четверть");
         }
     }

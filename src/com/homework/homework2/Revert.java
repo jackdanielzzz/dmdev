@@ -4,7 +4,7 @@
 //        Например: 4508 -> 8054, 4700 -> 74, 1234567 -> 7654321
 //        Примечание: для решения может понадобится функция возведение числа в степень: Math.pow(число, степень)
 
-package com.homeworks.homework2;
+package com.homework.homework2;
 
 public class Revert {
     public static void main(String[] args) {

@@ -9,7 +9,7 @@
 //        Результат: 34.5 (24.4 + 10.1)
 
 
-package com.homeworks.homework1;
+package com.homework.homework1;
 
 public class SimpleCalculator {
     public static void main(String[] args) {

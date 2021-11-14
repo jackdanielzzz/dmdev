@@ -1,4 +1,4 @@
-package com.exercises;
+package com.exercise;
 
 public class discriminant {
 
