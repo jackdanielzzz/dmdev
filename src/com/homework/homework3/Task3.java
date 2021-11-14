@@ -13,12 +13,12 @@ package com.homework.homework3;
 public class Task3 {
 
     public static void main(String[] args) {
-        int[] numericArray = {-4, 0, 1, 9, 0, -18, 3};
+        int[] numericArray = {- 4, 0, 1, 9, 0, - 18, 3};
         int[][] separatedArray = separateNumericArray(numericArray);
-        for (int[] ints : separatedArray) {
+        for (int[] i : separatedArray) {
             System.out.print("[");
-            for (int anInt : ints) {
-                System.out.print(anInt + " ");
+            for (int j : i) {
+                System.out.print(j + " ");
             }
             System.out.print("]");
             System.out.println();

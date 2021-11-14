@@ -24,7 +24,7 @@ public class Task2 {
         averageNum = averageNum / numericArray.length;
         for (int symbolCode : numericArray) {
             if (symbolCode > averageNum) {
-                System.out.println(symbolCode);
+                System.out.print(symbolCode + " ");
             }
         }
     }
