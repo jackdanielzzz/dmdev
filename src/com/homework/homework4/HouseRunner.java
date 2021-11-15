@@ -17,6 +17,11 @@ package com.homework.homework4;
 public class HouseRunner {
 
     public static void main(String[] args) {
+        House house = getHouse();
+        printAllInformation(house);
+    }
+
+    private static House getHouse() {
         Room[] singleRoomApt = {new Room(true)};
         Room[] doubleRoomsApt = {new Room(false), new Room(true)};
         Room[] threeRoomsApt = {new Room(true), new Room(true), new Room(false)};
@@ -25,8 +30,8 @@ public class HouseRunner {
         Apartment[] apartments2 = {new Apartment(4, singleRoomApt), new Apartment(5, doubleRoomsApt), new Apartment(6, threeRoomsApt)};
         Apartment[] apartments3 = {new Apartment(7, singleRoomApt), new Apartment(8, doubleRoomsApt), new Apartment(9, threeRoomsApt)};
         Floor[] floors = {new Floor(1, apartments1), new Floor(2, apartments2), new Floor(3, apartments3)};
-        House house1 = new House(10, floors);
-        printAllInformation(house1);
+        House house = new House(10, floors);
+        return house;
     }
 
     private static void printAllInformation(House house) {
