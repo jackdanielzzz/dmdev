@@ -2,33 +2,25 @@ package com.homework.homework4;
 
 public class Floor {
 
-    private int floorNumber;
-    private Apartment[] apartment;
+    private final int floorNumber;
+    private final Apartment[] apartments;
 
-    public Floor(int floorNumber, Apartment[] apartment) {
+    public Floor(int floorNumber, Apartment[] apartments) {
         this.floorNumber = floorNumber;
-        this.apartment = apartment;
+        this.apartments = apartments;
     }
 
     public void print() {
         System.out.println();
         System.out.print("Номер этажа: " + floorNumber + ", ");
-        System.out.println("количество квартир на этаже: " + apartment.length);
+        System.out.println("количество квартир на этаже: " + apartments.length);
     }
 
     public int getFloorNumber() {
         return floorNumber;
     }
 
-    public void setFloorNumber(int floorNumber) {
-        this.floorNumber = floorNumber;
-    }
-
-    public Apartment[] getApartment() {
-        return apartment;
-    }
-
-    public void setApartment(Apartment[] apartment) {
-        this.apartment = apartment;
+    public Apartment[] getApartments() {
+        return apartments;
     }
 }

@@ -2,32 +2,24 @@ package com.homework.homework4;
 
 public class Apartment {
 
-    private int flatNumber;
-    private Room[] room;
+    private final int flatNumber;
+    private final Room[] rooms;
 
-    public Apartment(int aptNumber, Room[] room) {
+    public Apartment(int aptNumber, Room[] rooms) {
         this.flatNumber = aptNumber;
-        this.room = room;
+        this.rooms = rooms;
     }
 
     public void print() {
         System.out.print("Номер квартиры: " + flatNumber + ", ");
-        System.out.println("количество комнат в квартире: " + room.length);
+        System.out.println("количество комнат в квартире: " + rooms.length);
     }
 
     public int getFlatNumber() {
         return flatNumber;
     }
 
-    public void setFlatNumber(int flatNumber) {
-        this.flatNumber = flatNumber;
-    }
-
-    public Room[] getRoom() {
-        return room;
-    }
-
-    public void setRoom(Room[] room) {
-        this.room = room;
+    public Room[] getRooms() {
+        return rooms;
     }
 }

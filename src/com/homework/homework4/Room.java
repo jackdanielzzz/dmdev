@@ -2,24 +2,17 @@ package com.homework.homework4;
 
 public class Room {
 
-    private boolean bypass;
+    private final boolean bypass;
 
     public Room(boolean bypass) {
         this.bypass = bypass;
     }
 
     public void print() {
-        if (bypass) {
-            System.out.println("Комната проходная");
-        }
-        else System.out.println("Комната не проходная");
+        System.out.println(bypass ? "Комната проходная" : "Комната не проходная");
     }
 
     public boolean isBypass() {
         return bypass;
-    }
-
-    public void setBypass(boolean bypass) {
-        this.bypass = bypass;
     }
 }

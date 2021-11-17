@@ -17,30 +17,47 @@ package com.homework.homework4;
 public class HouseRunner {
 
     public static void main(String[] args) {
-        House house = getHouse();
-        printAllInformation(house);
+        printAllInformation(getHouse1());
     }
 
-    private static House getHouse() {
-        Room[] singleRoomApt = {new Room(true)};
-        Room[] doubleRoomsApt = {new Room(false), new Room(true)};
-        Room[] threeRoomsApt = {new Room(true), new Room(true), new Room(false)};
+    static House getHouse1() {
+        Room[] rooms1 = {new Room(true), new Room(false)};
+        Apartment[] apartments1 = {new Apartment(1, rooms1)};
 
-        Apartment[] apartments1 = {new Apartment(1, singleRoomApt), new Apartment(2, doubleRoomsApt), new Apartment(3, threeRoomsApt)};
-        Apartment[] apartments2 = {new Apartment(4, singleRoomApt), new Apartment(5, doubleRoomsApt), new Apartment(6, threeRoomsApt)};
-        Apartment[] apartments3 = {new Apartment(7, singleRoomApt), new Apartment(8, doubleRoomsApt), new Apartment(9, threeRoomsApt)};
+        Room[] rooms2 = {new Room(false), new Room(false), new Room(false)};
+        Room[] rooms3 = {new Room(true), new Room(true), new Room(false)};
+        Apartment[] apartments2 = {new Apartment(2, rooms2), new Apartment(3, rooms3)};
+
+        Floor[] floors = {new Floor(1, apartments1), new Floor(2, apartments2)};
+        return new House(2, floors);
+
+    }
+
+    private static House getHouse2() {
+        Room[] singleRoomApt1 = {new Room(true)};
+        Room[] doubleRoomsApt2 = {new Room(false), new Room(true)};
+        Room[] threeRoomsApt3 = {new Room(true), new Room(true), new Room(false)};
+        Room[] singleRoomApt4 = {new Room(true)};
+        Room[] doubleRoomsApt5 = {new Room(false), new Room(true)};
+        Room[] threeRoomsApt6 = {new Room(true), new Room(true), new Room(false)};
+        Room[] singleRoomApt7 = {new Room(true)};
+        Room[] doubleRoomsApt8 = {new Room(false), new Room(true)};
+        Room[] threeRoomsApt9 = {new Room(true), new Room(true), new Room(false)};
+
+        Apartment[] apartments1 = {new Apartment(1, singleRoomApt1), new Apartment(2, doubleRoomsApt2), new Apartment(3, threeRoomsApt3)};
+        Apartment[] apartments2 = {new Apartment(4, singleRoomApt4), new Apartment(5, doubleRoomsApt5), new Apartment(6, threeRoomsApt6)};
+        Apartment[] apartments3 = {new Apartment(7, singleRoomApt7), new Apartment(8, doubleRoomsApt8), new Apartment(9, threeRoomsApt9)};
         Floor[] floors = {new Floor(1, apartments1), new Floor(2, apartments2), new Floor(3, apartments3)};
-        House house = new House(10, floors);
-        return house;
+        return new House(10, floors);
     }
 
     private static void printAllInformation(House house) {
         house.print();
-        for (Floor floor : house.getFloor()) {
+        for (Floor floor : house.getFloors()) {
             floor.print();
-            for (Apartment apartment : floor.getApartment()) {
+            for (Apartment apartment : floor.getApartments()) {
                 apartment.print();
-                for (Room room : apartment.getRoom()) {
+                for (Room room : apartment.getRooms()) {
                     room.print();
                 }
             }

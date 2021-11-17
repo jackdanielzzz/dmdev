@@ -22,6 +22,18 @@ public class StringTask2 {
         System.out.println("Сумма чисел из заданой строки: " + sum);
     }
 
+    public static int[] extractNumbers(String stringValue) {
+        int[] numbers = new int[numbersCount(stringValue)];
+        int index = 0;
+        Pattern pattern = Pattern.compile("[0-9]+");
+        Matcher matcher = pattern.matcher(stringValue);
+        while (matcher.find()) {
+            numbers[index] = Integer.parseInt(matcher.group());
+            index++;
+        }
+        return numbers;
+    }
+
     private static int sumNumbers(int[] numbers) {
         int result = 0;
         for (int number : numbers) {
@@ -38,17 +50,5 @@ public class StringTask2 {
             result++;
         }
         return result;
-    }
-
-    public static int[] extractNumbers(String stringValue) {
-        int[] numbers = new int[numbersCount(stringValue)];
-        int index = 0;
-        Pattern pattern = Pattern.compile("[0-9]+");
-        Matcher matcher = pattern.matcher(stringValue);
-        while (matcher.find()) {
-            numbers[index] = Integer.parseInt(matcher.group());
-            index++;
-        }
-        return numbers;
     }
 }

@@ -13,7 +13,7 @@ package com.homework.homework3;
 public class Task3 {
 
     public static void main(String[] args) {
-        int[] numericArray = {- 4, 0, 1, 9, 0, - 18, 3};
+        int[] numericArray = {-4, 0, 1, 9, 0, -18, 3};
         int[][] separatedArray = separateNumericArray(numericArray);
         for (int[] i : separatedArray) {
             System.out.print("[");

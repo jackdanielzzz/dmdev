@@ -2,32 +2,24 @@ package com.homework.homework4;
 
 public class House {
 
-    private int houseNumber;
-    private Floor[] floor;
+    private final int houseNumber;
+    private final Floor[] floors;
 
-    public House(int houseNumber, Floor[] floor) {
+    public House(int houseNumber, Floor[] floors) {
         this.houseNumber = houseNumber;
-        this.floor = floor;
+        this.floors = floors;
     }
 
     public void print() {
         System.out.print("Номер дома: " + houseNumber + ", ");
-        System.out.println("количество этажей: " + floor.length);
+        System.out.println("количество этажей: " + floors.length);
     }
 
     public int getHouseNumber() {
         return houseNumber;
     }
 
-    public void setHouseNumber(int houseNumber) {
-        this.houseNumber = houseNumber;
-    }
-
-    public Floor[] getFloor() {
-        return floor;
-    }
-
-    public void setFloor(Floor[] floor) {
-        this.floor = floor;
+    public Floor[] getFloors() {
+        return floors;
     }
 }

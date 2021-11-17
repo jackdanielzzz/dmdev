@@ -16,12 +16,12 @@ public class Task2 {
     }
 
     private static void showAboveAverageNumber(int[] numericArray) {
-        double averageNum = 0;
+        double sum = 0;
         for (int symbolCode : numericArray) {
-            averageNum += symbolCode;
+            sum += symbolCode;
         }
 
-        averageNum = averageNum / numericArray.length;
+        double averageNum = sum / numericArray.length;
         for (int symbolCode : numericArray) {
             if (symbolCode > averageNum) {
                 System.out.print(symbolCode + " ");

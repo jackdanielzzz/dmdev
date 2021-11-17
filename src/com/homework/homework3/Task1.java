@@ -18,13 +18,13 @@ public class Task1 {
     }
 
     public static int[] deleteNegativeElements(int[] values) {
-        int positiveCount = findPositiveAndZerosCount(values);
-        int[] positiveElements = new int[positiveCount];
+        int nonNegativeCount = findPositiveAndZerosCount(values);
+        int[] positiveElements = new int[nonNegativeCount];
 
         int counter = 0;
         for (int value : values) {
             if (value >= 0) {
-                positiveElements[counter++] = value * positiveCount;
+                positiveElements[counter++] = value * nonNegativeCount;
             }
         }
         return positiveElements;

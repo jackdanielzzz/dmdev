@@ -20,7 +20,7 @@ public class StringTask1 {
     }
 
     private static String removeSpaces(String value) {
-        return value.replaceAll("\\s+","");
+        return value.replaceAll("\\s+", "");
     }
 
     private static String removeDuplicates(String value) {
