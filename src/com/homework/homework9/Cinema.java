@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Cinema {
 
-    private Map<Integer, HashSet<Movie>> filmCollectionsByYear = new HashMap<>();
+    private Map<Integer, LinkedHashSet<Movie>> filmCollectionsByYear = new HashMap<>();
 
     public void addMovie(Movie movie) {
         if (movie == null) {
@@ -12,20 +12,20 @@ public class Cinema {
         }
 
         boolean needAdd = true;
-        for (Map.Entry<Integer, HashSet<Movie>> setEntry : filmCollectionsByYear.entrySet()) {
+        for (Map.Entry<Integer, LinkedHashSet<Movie>> setEntry : filmCollectionsByYear.entrySet()) {
             if (setEntry.getKey().equals(movie.getYear())) {
-                HashSet<Movie> movies = setEntry.getValue();
+                LinkedHashSet<Movie> movies = setEntry.getValue();
                 movies.add(movie);
                 needAdd = false;
             }
         }
 
         if (needAdd) {
-            filmCollectionsByYear.put(movie.getYear(), new HashSet<>(Set.of(movie)));
+            filmCollectionsByYear.put(movie.getYear(), new LinkedHashSet<>(Set.of(movie)));
         }
     }
 
-    public HashSet<Movie> getMoviesByYear(Integer year) {
+    public LinkedHashSet<Movie> getMoviesByYear(Integer year) {
         return filmCollectionsByYear.get(year);
     }
 
