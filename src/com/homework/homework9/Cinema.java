@@ -29,7 +29,7 @@ public class Cinema {
         return filmCollectionsByYear.get(year);
     }
 
-    public Set<Movie> getMoviesByYearAndMonth(Integer year, Integer month) {
+    public Set<Movie> getMoviesByYearAndMonth(Integer month, Integer year) {
         Set<Movie> moviesByYear = filmCollectionsByYear.get(year);
         Set<Movie> result = new LinkedHashSet<>();
         if (moviesByYear != null) {

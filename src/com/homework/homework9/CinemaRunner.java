@@ -29,9 +29,19 @@ public class CinemaRunner {
         cinema.addMovie(new Movie(7, 2005, 10, "Комедия", 7.5));
         cinema.addMovie(new Movie(8, 2006, 1, "Мелодрама", 8.1));
 
-        System.out.println(cinema.getMoviesByGenre("Детектив"));
+        System.out.println("Выводим все драммы");
+        System.out.println(cinema.getMoviesByGenre("Драмма"));
+        System.out.println();
+
+        System.out.println("Выводим все фильмы 1999го года выпуска");
         System.out.println(cinema.getMoviesByYear(1999));
+        System.out.println();
+
+        System.out.println("Выводим все фильмы 2002го года и 7го месяца");
         System.out.println(cinema.getMoviesByYearAndMonth(7, 2002));
+        System.out.println();
+
+        System.out.println("Выводим все топ 10 фильмов по рейтингам");
         System.out.println(cinema.getTop10Movies());
     }
 }
