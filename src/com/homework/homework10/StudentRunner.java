@@ -6,11 +6,11 @@ import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.mapping;
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 
 /**
@@ -37,12 +37,12 @@ public class StudentRunner {
     public static void main(String[] args) {
         List<Student> students = List.of(
                 new Student("Ivan", "Ivanov", 1, List.of(4, 5, 3, 4, 2, 2, 1)),
-                new Student("Petr", "Petrov", 2, List.of(5, 4)),  //--
+                new Student("Petr", "Petrov", 2, List.of(5, 4)),
                 new Student("Sidor", "Sidorov", 3, List.of(2, 3, 4, 5, 4, 3, 2, 3)),
                 new Student("Tihon", "Tihonov", 2, List.of(1, 2, 3, 3, 4, 2, 3, 4, 3)),
                 new Student("Rostislav", "Rostislavovich", 1, List.of(4, 5, 3, 4, 2, 2, 1)),
-                new Student("Georg", "Georgievich", 2, List.of(3, 2)),  //--
-                new Student("Mitya", "Mityaev", 3, List.of(2, 3, 3)),  //--
+                new Student("Georg", "Georgievich", 2, List.of(3, 2)),
+                new Student("Mitya", "Mityaev", 3, List.of(2, 3, 3)),
                 new Student("Kostya", "Kostyaev", 2, List.of(1, 2, 3, 4, 4, 2, 3, 1, 3)),
                 new Student("Olga", "Vasilievna", 5, List.of(5, 5, 5, 5)),
                 new Student("Maria", "Dmitrievna", 5, List.of(3, 3, 3, 3))
@@ -65,7 +65,7 @@ public class StudentRunner {
                 .collect(groupingBy(Student::yearAtUniversity, collectingAndThen(toList(), list -> {
                             Set<String> studentFullName = list.stream()
                                     .map(Student::getFullName)
-                                    .collect(Collectors.toSet());
+                                    .collect(toSet());
                             Double averageMark = list.stream()
                                     .collect(averagingDouble(Student::getAverageMark));
                             return new AverageMarkAndStudents(averageMark, studentFullName);
